@@ -1,0 +1,103 @@
+[
+    {
+      "model": "employee.Department",
+      "pk": 1,
+      "fields": {
+        "name": "Technical",
+        "description": "Technical Department"
+      }
+    },
+    {
+      "model": "employee.Department",
+      "pk": 2,
+      "fields": {
+        "name": "Financial",
+        "description": "Financial Department"
+      }
+    },
+    {
+        "model": "employee.Position",
+        "pk": 1,
+        "fields": {
+          "name": "Backend",
+          "description": "Backend Developer"
+        }
+    },
+    {
+        "model": "employee.Position",
+        "pk": 2,
+        "fields": {
+          "name": "TechLead",
+          "description": "Technical Leader"
+        }
+    },
+    {
+        "model": "employee.Position",
+        "pk": 3,
+        "fields": {
+          "name": "Accountant",
+          "description": "Accountant"
+        }
+    },
+    {
+        "model": "employee.Location",
+        "pk": 1,
+        "fields": {
+          "country": "Ho Chi Minh City",
+          "zip_code": "70000"
+        }
+    },
+    {
+        "model": "employee.Location",
+        "pk": 2,
+        "fields": {
+          "country": "Singapore",
+          "zip_code": "99999"
+        }
+    },
+    {
+        "model": "employee.Employee",
+        "pk": 1,
+        "fields": {
+          "first_name": "Quang",
+          "last_name": "Tran",
+          "phone_number": "+84938848036",
+          "email": "quang@omnihr.co",
+          "status": "Active",
+          "department": 1,
+          "position": 1,
+          "location": 1,
+          "company": 1
+        }
+    } ,
+    {
+        "model": "employee.Employee",
+        "pk": 2,
+        "fields": {
+          "first_name": "Zhen",
+          "last_name": "Long",
+          "phone_number": "+63123465839",
+          "email": "zhen@omnihr.co",
+          "status": "Active",
+          "department": 1,
+          "position": 2,
+          "location": 2,
+          "company": 1
+        }
+    },
+    {
+        "model": "employee.Employee",
+        "pk": 3,
+        "fields": {
+          "first_name": "Thanh",
+          "last_name": "Vuong",
+          "phone_number": "+84931313131",
+          "email": "thanh@gmail.com",
+          "status": "Active",
+          "department": 2,
+          "position": 3,
+          "location": 1,
+          "company": 2
+        }
+    } 
+]

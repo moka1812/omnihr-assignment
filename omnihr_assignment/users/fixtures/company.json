@@ -1,0 +1,18 @@
+[
+    {
+      "model": "users.Company",
+      "pk": 1,
+      "fields": {
+        "name": "OmniHR",
+        "description": "OmniHR Company"
+      }
+    },
+    {
+      "model": "users.Company",
+      "pk": 2,
+      "fields": {
+        "name": "Quang",
+        "description": "Quang Company"
+      }
+    }
+  ]
