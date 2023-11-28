@@ -18,13 +18,11 @@ class EmployeeListView(generics.ListAPIView):
     queryset = Employee.objects.all()
     permission_classes = (permissions.IsAuthenticated, RateLimitPermission)
 
-    def get_queryset(self):
-        user = self.request.user
-
-        qs = self.queryset.filter(company=user.company)
-        
+    def get_queryset(self):        
+        qs = self.queryset
         status = self.request.query_params.get('status')
         if status is not None:
+            print(status.split(','))
             qs = qs.filter(status__in=status.split(','))
 
         location = self.request.query_params.get('location')
@@ -44,11 +42,12 @@ class EmployeeListView(generics.ListAPIView):
     def list(self, request, *args, **kwargs):
         paginator = CustomPagination()
         user = self.request.user
+        qs = self.get_queryset()
         # Get dynamic field config by company id
         dynamic_fields_key =  "EMPLOYEE_FIELDS"
         fields = redisClient.hget(name=dynamic_fields_key, key=user.company.id).decode('utf-8')
         fields = json.loads(fields)            
 
-        page = paginator.paginate_queryset(self.queryset, request)
+        page = paginator.paginate_queryset(qs.filter(company=user.company), request)
         serializer = self.serializer_class(page, fields=fields, many=True)
         return paginator.get_paginated_response(serializer.data)

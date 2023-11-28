@@ -339,4 +339,4 @@ SPECTACULAR_SETTINGS = {
 }
 # Your stuff...
 # ------------------------------------------------------------------------------
-RATE_LIMIT = '5/minute'
+RATE_LIMIT = '10/minute'
